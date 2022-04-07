@@ -7,6 +7,7 @@
 }
 body {
   font-family: 'Roboto', sans-serif;
+  
 }
 .fas {
   font-size: 1.2em;
@@ -102,6 +103,10 @@ header img{
   border:1px solid#e7acc2;
   margin-top: 10px;
 }
+.hero .info-content .btn a{
+  text-decoration: none ;
+  color: #fff;
+}
 .hero .info-content .btn:hover {
   background-color: #e7acc2;
   color:#181818;
@@ -152,12 +157,14 @@ header img{
   justify-content: center;
  background-image: linear-gradient(rgba(16, 16, 16, .9), rgba(16, 16, 16, .9)) , url("../img/bts_fondo.jpg");
  background-size: cover;
+ overflow: hidden;
 }
 .card{
   background: linear-gradient( rgb(253, 245, 131), rgb(255, 181, 227));
   position: relative;
   width: 600px;
   height: 300px;
+  width: 100%;
   
   display: flex;
   
@@ -170,10 +177,12 @@ header img{
   left: 50%;
   transform: translateX(-50%);
   height: 200px;
+  
 }
 .card:hover img{
   left: 73%;
   height: 300px;
+
 }
 .content{
   position: relative;
@@ -211,15 +220,24 @@ header img{
 
 /*-------------------------------------*/
 
-@media only screen and (max-width: 760px)  {
+@media only screen and (max-width: 720px)  {
+  .container{ 
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+}
+@media only screen and (max-width: 1024px)  {
   
   .container{ 
     grid-template-columns: repeat(1, 1fr);
+    
   }
   .card{
-    width: 500px;
-    height: 250px;
+    
+    width: 100%;
+    
   }
+  
   .navbar{
     display: flex;
     
@@ -314,7 +332,7 @@ header img{
     height: 200px;
   }
   .card:hover img{
-   
+   display: none;
     height: 250px;
   }
   .content h2{
@@ -326,6 +344,20 @@ header img{
     color: rgb(29, 28, 29);
     font-size: 0.7em;
     padding: 5px;
+  }
+  .content{
+    position: relative;
+    width: 100%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  .card:hover .content{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
   
   }
 }
